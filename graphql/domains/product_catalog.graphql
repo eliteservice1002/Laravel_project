@@ -1,0 +1,23 @@
+type Attribute {
+    id: ID!
+    name: String!
+}
+
+type ProductType {
+    id: ID!
+    name: String!
+    attributes: [Attribute]!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    store: Store!
+    product_type: ProductType!
+}
+
+type ProductItem {
+    id: ID!
+    product: Product!
+    name: String!
+}

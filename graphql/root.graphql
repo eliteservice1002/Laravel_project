@@ -1,0 +1,51 @@
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    tenatnUsers: [User!]! @paginate(model: "App\\Domains\\Tenants\\Models\\TenantUser", defaultCount: 10)
+    tenantUser(id: ID @eq): User @find(model: "App\\Domains\\Tenants\\Models\\TenantUser")
+
+    products: [Product!]! @paginate(model: "App\\Domains\\ProductCatalog\\Models\\Product", defaultCount: 10)
+
+    page(id: ID @eq): ContentPage @find(model: "App\\Domains\\Marketing\\Models\\ContentPage")
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type ContentPage {
+    blocks: [ContentPageBlock!]
+}
+
+type ContentPageBlock {
+    type: String!
+    label: String
+    show_more_label: String
+    items: [ContentPageBlockItem!]
+}
+
+type ContentPageBlockItem {
+    image: ContentPageBlockItemImage
+    label: String
+    link_id: String
+    link_type: String
+}
+
+type ContentPageBlockItemImage {
+    image: String!
+}
+
+
+
+#import domains/stores.graphql
+#import domains/order_filfullment.graphql
+#import domains/product_catalog.graphql
+

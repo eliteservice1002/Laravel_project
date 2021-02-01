@@ -1,0 +1,5 @@
+code,inventory_location,type,name_ar,name_en
+IL-01001,IL-01,receiving,الاستلام,Receiving
+IA-01002,IL-01,inspection,الفحص,Inspection
+IA-02001,IL-03,stock_storage,المخزون,Storage
+IA-03001,IL-03,stock_storage,المخزون,Storage

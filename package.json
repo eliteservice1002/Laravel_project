@@ -1,0 +1,30 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.12",
+        "axios": "^0.21",
+        "laravel-echo": "^1.10",
+        "laravel-mix": "^6.0",
+        "lodash": "^4.17",
+        "postcss": "^8.1",
+        "pusher-js": "^7.0",
+        "tailwindcss": "^2.0",
+        "vue-loader": "^15.9",
+        "vue-template-compiler": "^2.6"
+    },
+    "dependencies": {
+        "animated-scroll-to": "^2.0",
+        "laravel-nova": "^1.7",
+        "progressbar.js": "^1.1",
+        "vue": "^2.6"
+    }
+}
